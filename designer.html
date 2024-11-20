@@ -92,6 +92,12 @@
                     var selectedIndex = this.selectedIndex;
                     _select_option(selectedIndex, 0); // 0은 첫 번째 셀렉트 바의 인덱스
                 });
+
+                // touchstart 이벤트 리스너 추가
+                document.getElementById('designSelect').addEventListener('touchstart', function() {
+                    var selectedIndex = this.selectedIndex;
+                    _select_option(selectedIndex, 0); // 0은 첫 번째 셀렉트 바의 인덱스
+                });
             }
 
             function isMobileDevice() {

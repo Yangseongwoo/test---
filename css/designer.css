@@ -438,7 +438,7 @@ body {
     opacity: 0;
     position: absolute;
     visibility: hidden;
-    pointer-events: none;
+    /* pointer-events: none; */
 }
 
 /* 배경 텍스트의 z-index를 더 낮게 설정 */
@@ -451,7 +451,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    pointer-events: none;
+    /* pointer-events: none; */
     z-index: -1;
     opacity: 0.8;
     overflow: hidden;
