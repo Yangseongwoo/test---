@@ -113,12 +113,19 @@
                     div_cont_select[e].setAttribute('data-selec-open','false');
                     var ul_cont = document.querySelectorAll("[data-indx-select='"+e+"'] > .cont_list_select_mate > ul");
                     select_ = document.querySelectorAll("[data-indx-select='"+e+"'] >select")[0];
-                    if (isMobileDevice()) { 
-                        select_.addEventListener('change', function () {
-                            var selectedIndex = this.selectedIndex;
-                            _select_option(selectedIndex, e);
-                        });
-                    }
+                    
+                    // 모바일 장치에서 select 요소의 change 이벤트 리스너 추가
+                    select_.addEventListener('change', function () {
+                        var selectedIndex = this.selectedIndex;
+                        _select_option(selectedIndex, this.parentElement.getAttribute('data-indx-select'));
+                    });
+
+                    // touchstart 이벤트 리스너 추가
+                    select_.addEventListener('touchstart', function() {
+                        var selectedIndex = this.selectedIndex;
+                        _select_option(selectedIndex, this.parentElement.getAttribute('data-indx-select'));
+                    });
+
                     var select_optiones = select_.options;
                     document.querySelectorAll("[data-indx-select='"+e+"']  > .selecionado_opcion ")[0].setAttribute('data-n-select',e);
                     document.querySelectorAll("[data-indx-select='"+e+"']  > .icon_select_mate ")[0].setAttribute('data-n-select',e);
@@ -680,7 +687,7 @@
                 li.style.visibility = 'visible';
                 li.style.display = 'block';
                 li.classList.remove('fade-out');
-                li.style.marginRight = '1.563vw'; // 기본 마진 설정
+                li.style.marginRight = '1.563vw'; // 기본 마진 ���정
             });
             
             // 3의 배수 아이템의 마진 조정
