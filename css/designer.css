@@ -58,13 +58,13 @@ body {
     font-weight: 600;
     transition: all 375ms ease-in-out;
     white-space: nowrap;
-/* Oculto el elemento select */
+    /* Oculto el elemento select */
     select {
-    position: absolute;
-    overflow: hidden;
-    height: 0px;
-    opacity: 0;  
-    z-index: -1;
+        position: absolute;
+        overflow: hidden;
+        height: 0px;
+        opacity: 0;  
+        z-index: -1;
     }
 }
 
@@ -495,7 +495,7 @@ body {
 
 @keyframes textMove {
     0% {
-        transform: translateX(0%);  /* 시작 위치를 화면 오른쪽 끝으로 변경 */
+        transform: translateX(0%);  /* 시작 위치를 화면 오른쪽 끝으로 ��경 */
     }
     100% {
         transform: translateX(-50%);  /* 종료 위치를 화면 왼쪽 끝으로 변경 */
