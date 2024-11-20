@@ -360,19 +360,30 @@ function initializeMobile() {
         const listViewBtn = document.querySelector('.list-view');
 
         if (viewType === 'grid') {
+            // 버튼 상태 변경
             gridViewBtn.classList.add('active');
             listViewBtn.classList.remove('active');
-            projectGridView.style.display = 'block';
+            
+            // 뷰 전환
+            projectGridView.style.display = 'grid';
             projectListView.style.display = 'none';
             
             // 현재 선택된 카테고리에 맞는 그리드 표시
             const currentCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
             toggleGrids(currentCategory);
         } else {
+            // 버튼 상태 변경
             gridViewBtn.classList.remove('active');
             listViewBtn.classList.add('active');
+            
+            // 뷰 전환
             projectGridView.style.display = 'none';
             projectListView.style.display = 'block';
+            
+            // 리스트 뷰 초기화
+            const currentCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
+            projects = projectsData[currentCategory]; // 현재 카테고리의 프로젝트 데이터로 초기화
+            createProjectCards(); // 카드 생성
         }
     }
 
@@ -428,7 +439,9 @@ function setActiveView(viewType) {
         projectListView.style.display = 'block';
         
         // 리스트 뷰 초기화
-        initializeListView();
+        const currentCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
+        projects = projectsData[currentCategory]; // 현재 카테고리의 프로젝트 데이터로 초기화
+        createProjectCards(); // 카드 생성
     }
 }
 
