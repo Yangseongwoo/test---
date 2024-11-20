@@ -110,7 +110,7 @@ a {
 .custom_cursor {
     width: 15px;
     height: 15px;
-    /* pointer-events: none; */
+    pointer-events: none;
     position: fixed;
     padding: 0.3rem;
     background-color: #fff;
