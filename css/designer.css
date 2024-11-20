@@ -66,7 +66,7 @@ body {
         height: 0px;
         opacity: 0;  
         z-index: -1;
-        display: none;
+        visibility: hidden;
     }
 }
 
@@ -497,7 +497,7 @@ body {
 
 @keyframes textMove {
     0% {
-        transform: translateX(0%);  /* 시작 위치를 화면 오른쪽 끝으로 ��경 */
+        transform: translateX(0%);  /* 시작 위치를 화면 오른쪽 끝으로 경 */
     }
     100% {
         transform: translateX(-50%);  /* 종료 위치를 화면 왼쪽 끝으로 변경 */
