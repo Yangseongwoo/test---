@@ -96,19 +96,6 @@ function initializeMobile() {
         updateWheel();
     }
 
-    // 새로고침 시 기본 카테고리 설정
-    window.addEventListener('beforeunload', function() {
-        localStorage.setItem('currentCategory', currentCategory);
-    });
-
-    // 페이지 로드 시 카테고리 복원
-    window.addEventListener('load', function() {
-        const savedCategory = localStorage.getItem('currentCategory');
-        if (savedCategory) {
-            updateProjectsList(savedCategory);
-        }
-    });
-
     const ITEM_HEIGHT = 50;
     let currentIndex = 0;
     let startY = 0;
