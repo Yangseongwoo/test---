@@ -68,7 +68,7 @@ function initializeMobile() {
             { title: '브랜드 B.I디자인', author: '이재원', image: 'images/works/이재원.jpg', link: 'https://drive.google.com/file/d/1pAGVclxw72Iv2w8pRNQhFIkzO-XoFMy7/view?usp=sharing' },
             { title: '월인석봉에디션', author: '임재형', image: 'images/works/임재형.jpg', link: 'https://drive.google.com/file/d/1r_Nc5pBIytnpiUyiO30-uzF3cxF7tlr8/view?usp=sharing' },
             { title: '킹부각 (패키지 디자인)', author: '정회강', image: 'images/works/정회강.jpg', link: 'https://drive.google.com/file/d/1ZtJoyxB2d-WY2_Z2Z-FHbLpusA1pg8ti/view?usp=sharing' },
-            { title: '바라의 하루', author: '최민주', image: 'images/works/최민주.jpg', link: 'https://drive.google.com/file/d/149bOHSebmTfuqB5cDmzQu0a0oVgRa3ER/view?usp=sharing' },
+            { title: '바라의 하루', author: '최민주', image: 'images/works/���민주.jpg', link: 'https://drive.google.com/file/d/149bOHSebmTfuqB5cDmzQu0a0oVgRa3ER/view?usp=sharing' },
             { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌', image: 'images/works/한헌.jpg', link: 'https://drive.google.com/file/d/1Z9zKmaU519uUduZqhRglceRT5Zp2GRty/view?usp=sharing' },
             { title: 'Portfolio', author: '허준우', image: 'images/works/허준우.jpg', link: 'https://drive.google.com/file/d/1O03MhrdLF11GXe7JPpNPPtUOCfKKBzN6/view?usp=sharing' }
         ]
@@ -349,6 +349,10 @@ function initializeMobile() {
             
             // 리스트 뷰 업데이트
             updateProjectsList(category);
+            
+            // 현재 카테고리의 프로젝트 데이터로 초기화
+            projects = projectsData[category]; // 현재 카테고리의 프로젝트 데이터로 초기화
+            initializeListView(); // 리스트 뷰 초기화 함수 호출
         });
     });
 
@@ -368,9 +372,8 @@ function initializeMobile() {
             projectGridView.style.display = 'grid';
             projectListView.style.display = 'none';
             
-            // 현재 선택된 카테고리에 맞는 그리드 표시
-            const currentCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
-            toggleGrids(currentCategory);
+            // 그리드 뷰 초기화
+            // initializeGridView(); // 필요 시 정의된 함수 호출
         } else {
             // 버튼 상태 변경
             gridViewBtn.classList.remove('active');
