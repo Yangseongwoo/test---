@@ -66,17 +66,18 @@
         
         <div class="main_wrap">
         <div class="sub_nav">
-            <div class="select_mate" data-mate-select="active" >
-                <select name="" onchange="" onclick="return false;" id="">
+            <div class="select_mate" data-mate-select="active">
+                <select name="" onchange="open_select(this);" id="">
                     <option value="digital">Digital Design</option>
                     <option value="visual">Visual Design</option>
                 </select>
-                <p class="selecionado_opcion"  onclick="open_select(this)" ></p><span onclick="open_select(this)" class="icon_select_mate" >
+                <p class="selecionado_opcion" onclick="open_select(this)"></p>
+                <span onclick="open_select(this)" class="icon_select_mate">
                     <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
                     <path d="M0-.75h24v24H0z" fill="none"/>
                 </svg></span>
                 <div class="cont_list_select_mate">
-                <ul class="cont_select_int">  </ul> 
+                    <ul class="cont_select_int"></ul>
                 </div>
             </div>
             <div class="search">
