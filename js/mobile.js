@@ -69,7 +69,7 @@ function initializeMobile() {
             { title: '월인석봉에디션', author: '임재형', image: 'images/works/임재형.jpg', link: 'https://drive.google.com/file/d/1r_Nc5pBIytnpiUyiO30-uzF3cxF7tlr8/view?usp=sharing' },
             { title: '킹부각 (패키지 디자인)', author: '정회강', image: 'images/works/정회강.jpg', link: 'https://drive.google.com/file/d/1ZtJoyxB2d-WY2_Z2Z-FHbLpusA1pg8ti/view?usp=sharing' },
             { title: '바라의 하루', author: '최민주', image: 'images/works/최민주.jpg', link: 'https://drive.google.com/file/d/149bOHSebmTfuqB5cDmzQu0a0oVgRa3ER/view?usp=sharing' },
-            { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌', image: 'images/works/한���헌.jpg', link: 'https://drive.google.com/file/d/1Z9zKmaU519uUduZqhRglceRT5Zp2GRty/view?usp=sharing' },
+            { title: '자수롭게(로고, 굿즈디자인)', author: '한병헌', image: 'images/works/한헌.jpg', link: 'https://drive.google.com/file/d/1Z9zKmaU519uUduZqhRglceRT5Zp2GRty/view?usp=sharing' },
             { title: 'Portfolio', author: '허준우', image: 'images/works/허준우.jpg', link: 'https://drive.google.com/file/d/1O03MhrdLF11GXe7JPpNPPtUOCfKKBzN6/view?usp=sharing' }
         ]
     };
@@ -383,7 +383,7 @@ function initializeMobile() {
             // 리스트 뷰 초기화
             const currentCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
             projects = projectsData[currentCategory]; // 현재 카테고리의 프로젝트 데이터로 초기화
-            createProjectCards(); // 카드 생성
+            initializeListView(); // 리스트 뷰 초기화 함수 호출
         }
     }
 
@@ -441,16 +441,15 @@ function setActiveView(viewType) {
         // 리스트 뷰 초기화
         const currentCategory = document.querySelector('.category-text.active').textContent.toLowerCase();
         projects = projectsData[currentCategory]; // 현재 카테고리의 프로젝트 데이터로 초기화
-        createProjectCards(); // 카드 생성
+        initializeListView(); // 리스트 뷰 초기화 함수 호출
     }
 }
 
 // 리스트 뷰 초기화 함수
 function initializeListView() {
-    projectWheel.innerHTML = '';
-    initializeWheel();
-    projectStack.innerHTML = '';
-    createProjectCards();
+    projectWheel.innerHTML = ''; // 프로젝트 휠 초기화
+    projectStack.innerHTML = ''; // 프로젝트 스택 초기화
+    createProjectCards(); // 카드 생성
 }
 
 // 뷰 전환 버튼 이벤트 리스너
