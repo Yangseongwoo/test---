@@ -58,15 +58,13 @@ body {
     font-weight: 600;
     transition: all 375ms ease-in-out;
     white-space: nowrap;
-    pointer-events: auto;
-    /* Oculto el elemento select */
+/* Oculto el elemento select */
     select {
-        position: absolute;
-        overflow: hidden;
-        height: 0px;
-        opacity: 0;  
-        z-index: -1;
-        visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    height: 0px;
+    opacity: 0;  
+    z-index: -1;
     }
 }
 
@@ -440,7 +438,7 @@ body {
     opacity: 0;
     position: absolute;
     visibility: hidden;
-    /* pointer-events: none; */
+    pointer-events: none;
 }
 
 /* 배경 텍스트의 z-index를 더 낮게 설정 */
@@ -453,7 +451,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    /* pointer-events: none; */
+    pointer-events: none;
     z-index: -1;
     opacity: 0.8;
     overflow: hidden;
@@ -497,7 +495,7 @@ body {
 
 @keyframes textMove {
     0% {
-        transform: translateX(0%);  /* 시작 위치를 화면 오른쪽 끝으로 경 */
+        transform: translateX(0%);  /* 시작 위치를 화면 오른쪽 끝으로 변경 */
     }
     100% {
         transform: translateX(-50%);  /* 종료 위치를 화면 왼쪽 끝으로 변경 */
