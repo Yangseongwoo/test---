@@ -58,6 +58,7 @@ body {
     font-weight: 600;
     transition: all 375ms ease-in-out;
     white-space: nowrap;
+    pointer-events: auto;
     /* Oculto el elemento select */
     select {
         position: absolute;
