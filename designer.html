@@ -94,9 +94,21 @@
                 });
 
                 // touchstart 이벤트 리스너 추가
-                document.getElementById('designSelect').addEventListener('click', function() {
+                document.getElementById('designSelect').addEventListener('touchstart', function() {
                     var selectedIndex = this.selectedIndex;
                     _select_option(selectedIndex, 0); // 0은 첫 번째 셀렉트 바의 인덱스
+                });
+
+                // blur 이벤트 리스너 추가
+                document.getElementById('designSelect').addEventListener('blur', function() {
+                    // 선택이 해제될 때의 동작을 여기에 추가
+                    salir_select(0); // 0은 첫 번째 셀렉트 바의 인덱스
+                });
+
+                // focus 이벤트 리스너 추가
+                document.getElementById('designSelect').addEventListener('focus', function() {
+                    // 선택이 활성화될 때의 동작을 여기에 추가
+                    open_select(this); // 현재 선택된 요소를 열기
                 });
             }
 
@@ -488,7 +500,7 @@
                 <li>
                     <a target="_blank" href="https://drive.google.com/file/d/1JYEX7Bb5MKqITndgL7u1z4ZebisUwOf2/view?usp=sharing">
                         <div class="stu_img">
-                            <img src="images/designer/a/2A_박경호_프로필사진.jpg" alt="">
+                            <img src="images/designer/a/2A_박경호_��로필사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">박경호</div>
@@ -587,7 +599,7 @@
                 <li>
                     <a target="_blank" href="https://drive.google.com/file/d/1r_Nc5pBIytnpiUyiO30-uzF3cxF7tlr8/view?usp=sharing">
                         <div class="stu_img">
-                            <img src="images/designer/a/2A_임재형_프로필사���.jpg" alt="">
+                            <img src="images/designer/a/2A_임재형_프로필사.jpg" alt="">
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">임재</div>
@@ -598,7 +610,7 @@
                 <li>
                     <a target="_blank" href="https://drive.google.com/file/d/1ZtJoyxB2d-WY2_Z2Z-FHbLpusA1pg8ti/view?usp=sharing">
                         <div class="stu_img">
-                            <img src="images/designer/a/2A_정회강_프로필사진.jpg" alt="">
+                            <img src="images/designer/a/2A_정회강_프���필사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">정회강</div>
