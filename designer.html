@@ -66,17 +66,17 @@
         
         <div class="main_wrap">
         <div class="sub_nav">
-            <div class="select_mate" data-mate-select="active" >
-                <select name="" onchange="" onclick="return false;" id="">
+            <div class="select_mate" data-mate-select="active">
+                <select name="" id="designSelect">
                     <option value="digital">Digital Design</option>
                     <option value="visual">Visual Design</option>
                 </select>
-                <p class="selecionado_opcion"  onclick="open_select(this)" ></p><span onclick="open_select(this)" class="icon_select_mate" >
+                <p class="selecionado_opcion" onclick="open_select(this)"></p><span onclick="open_select(this)" class="icon_select_mate">
                     <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
                     <path d="M0-.75h24v24H0z" fill="none"/>
                 </svg></span>
                 <div class="cont_list_select_mate">
-                <ul class="cont_select_int">  </ul> 
+                    <ul class="cont_select_int"></ul>
                 </div>
             </div>
             <div class="search">
@@ -85,8 +85,13 @@
         </div>
         <!-- 셀렉바 js -->
         <script>
-            window.onload = function(){
+            window.onload = function() {
                 crear_select();
+                // 셀렉트 요소의 change 이벤트 리스너 추가
+                document.getElementById('designSelect').addEventListener('change', function() {
+                    var selectedIndex = this.selectedIndex;
+                    _select_option(selectedIndex, 0); // 0은 첫 번째 셀렉트 바의 인덱스
+                });
             }
 
             function isMobileDevice() {
@@ -409,7 +414,7 @@
                 <li>
                     <a target="_blank" href="https://1000soo.github.io/cs_work/">
                         <div class="stu_img">
-                            <img src="images/designer/b/2B_장천��_프로필사진.jpg" alt="">
+                            <img src="images/designer/b/2B_장천_프로필사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
                             <div class="name_kr">장천수</div>
@@ -579,7 +584,7 @@
                             <img src="images/designer/a/2A_임재형_프로필사진.jpg" alt="">
                         </div>
                         <div class="stu_txt">
-                            <div class="name_kr">임재��</div>
+                            <div class="name_kr">임재</div>
                             <div class="name_eng">Lim Jaehyeong</div>
                         </div>
                     </a>
